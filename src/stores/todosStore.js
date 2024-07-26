@@ -3,23 +3,7 @@ import axios from 'axios'
 
 export const useTodoStore = defineStore('todo', {
   state: () => ({
-    todos: [
-      // {
-      //   id: 1,
-      //   text: 'some 111',
-      //   done: false
-      // },
-      // {
-      //   id: 2,
-      //   text: 'some 2',
-      //   done: false
-      // },
-      // {
-      //   id: 3,
-      //   text: 'some 3',
-      //   done: false
-      // }
-    ]
+    todos: []
   }),
 
   actions: {
@@ -75,5 +59,6 @@ export const useTodoStore = defineStore('todo', {
         this.todos = this.todos.map((el) => (el.id === todo.id ? { ...el, done: todo.done } : el))
       }
     }
-  }
+  },
+  persist: true
 })
