@@ -16,7 +16,7 @@ const todosStore = useTodoStore();
 
 const addNewTodoItem = () => {
     let toDoObj = {
-        id: `id ${Math.random().toString(16).slice(2)}`,
+        id: Math.random().toString(16).slice(2),
         text: todoText.value
     }
     todoText.value = '';

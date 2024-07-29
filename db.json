@@ -1,0 +1,19 @@
+{
+    "todos": [
+        {
+            "id": "de3bc1160ad5c",
+            "text": "sfsdfsdf",
+            "done": false
+        },
+        {
+            "id": "4b124d4e73ab9",
+            "text": "іваіва1111",
+            "done": true
+        },
+        {
+            "id": "7047c7cadc022",
+            "text": "арарпапр",
+            "done": true
+        }
+    ]
+}
