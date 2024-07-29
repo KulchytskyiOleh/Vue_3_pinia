@@ -1,6 +1,5 @@
 <template>
     <div class="todoListWrapper">
-        
         <todoItem v-for="todo in todosStore.todos" :key="todo.id" :todo @todoDone="todoDone" @editToDoItem="editToDoItem"
             @deleteToDo="deleteToDo" />
     </div>
@@ -9,9 +8,15 @@
 <script setup>
 import todoItem from './todoItem.vue'
 import { useTodoStore } from "../stores/todosStore";
-// import { ref, onMounted } from 'vue'
-
+import { ref, onMounted } from 'vue'
 const todosStore = useTodoStore();
+
+onMounted(async () => {
+    // let dd = todosStore.get_Todos();
+    // console.log(dd,'dddd');
+    todosStore.get_Todos();
+})
+
 
 function todoDone(val) {
     if (val.id) todosStore.todoDoneToggle(val)

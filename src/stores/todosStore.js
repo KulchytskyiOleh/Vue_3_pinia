@@ -1,19 +1,20 @@
 import { defineStore } from 'pinia'
-import axios from 'axios'
+// import axios from 'axios'
+import { todoActions } from '../api/todoActions'
 
 export const useTodoStore = defineStore('todo', {
   state: () => ({
-    todos: []
+    todos: [],
   }),
 
   actions: {
-    async getTodos() {
-      // try {
-      //   const response = await axios.get('http://your-api-endpoint/todos')
-      //   this.todos = response.data
-      // } catch (error) {
-      //   console.error('Error fetching todos:', error)
-      // }
+    async get_Todos() {
+      try {
+        const response = await todoActions.getTodos()
+        return this.todos = response.data;
+      } catch (error) {
+        console.error('Error fetching todos:', error)
+      }
     },
 
     async addTodo(todo) {
