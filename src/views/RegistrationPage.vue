@@ -30,7 +30,7 @@ import { useUsersStore } from "../stores/userStore";
 const userStore = useUsersStore();
 
 onMounted(() => {
-    console.log(userStore.getUsers().then,'ddd');
+    console.log(userStore.getUsers(),'ddd');
 })
 
 

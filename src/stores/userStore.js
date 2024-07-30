@@ -11,6 +11,7 @@ export const useUsersStore = defineStore('user', {
     async getUsers() {
       try {
         const response = await userApi.getUsers()
+        console.log(response, 'response.data')
         return (this.users = response.data)
       } catch (error) {
         console.error('Error fetching todos:', error)
