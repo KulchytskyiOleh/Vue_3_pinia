@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { userApi } from '../api/userActions'
 
-export const useTodoStore = defineStore('user', {
+export const useUsersStore = defineStore('user', {
   state: () => ({
     user: {},
     users: []

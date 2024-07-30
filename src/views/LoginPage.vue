@@ -2,10 +2,13 @@
     <div class="LoginForm">
         <v-card class="mx-auto px-6 py-8" width="344">
             <v-form v-model="form" @submit.prevent="onSubmit">
-                <v-text-field v-model="userName" :readonly="loading" :rules="[required]" class="mb-5" label="User name"
-                    clearable />
-                <v-text-field v-model="userPassword" :readonly="loading" class="mb-5" :rules="[required]"
-                    label="Password" placeholder="Enter your password" clearable />
+                <v-text-field v-model="userName" :readonly="loading" :rules="[validationRules(userName).required]"
+                    class="mb-5" label="User name" clearable />
+                <v-text-field v-model="userPassword" :readonly="loading" class="mb-5"
+                    :rules="[validationRules(userPassword).password]" label="Password" placeholder="Enter your password"
+                    clearable :type="showPassword ? 'text' : 'password'"
+                    :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                    @click:append="showPassword = !showPassword" />
                 <!-- <br> -->
                 <div class="loginFormBtnWrapper">
                     <RouterLink class="registrationLink" to="/registration">Registration</RouterLink>
@@ -20,11 +23,14 @@
 </template>
 <script setup>
 import { ref } from 'vue'
+import validationRules from '../helpers/validationRules'
 
 let form = ref(false);
 let userName = ref(null);
 let userPassword = ref(null);
 let loading = ref(false);
+
+let showPassword = ref(false);
 
 function onSubmit() {
     if (!this.form) return
@@ -35,12 +41,8 @@ function onSubmit() {
 }
 
 
-
-function required(v) {
-    return !!v || 'Field is required'
-}
-
 </script>
+
 <style>
 .LoginForm {
     /* margin-top: 100px; */

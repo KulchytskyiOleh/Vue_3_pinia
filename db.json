@@ -16,5 +16,11 @@
             "done": true
         }
     ],
-    "users":[]
+    
+    "users":[{
+        "id":"4b124d4e73ab91",
+        "name":"test User",
+        "email":"test@mail.com",
+        "password": "1Q@w3e4r5t6y"
+    }]
 }

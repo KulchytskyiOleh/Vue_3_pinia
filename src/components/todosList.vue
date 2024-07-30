@@ -9,6 +9,7 @@
 import todoItem from './todoItem.vue'
 import { useTodoStore } from "../stores/todosStore";
 import { ref, onMounted } from 'vue'
+
 const todosStore = useTodoStore();
 
 onMounted(async () => {
