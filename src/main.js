@@ -8,6 +8,12 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import router from './router'
 
+// import { worker } from './mocks/browser'
+
+// if (import.meta.env.MODE === 'development') {
+//   worker.start()
+// }
+
 const app = createApp(App)
 
 const pinia = createPinia()

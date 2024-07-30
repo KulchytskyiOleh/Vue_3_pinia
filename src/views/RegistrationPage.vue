@@ -23,14 +23,16 @@
 </template>
 
 <script setup>
-import { ref, onMounted} from 'vue'
+import { ref, onMounted } from 'vue'
 import validationRules from '../helpers/validationRules'
+import idGenerator from '../helpers/idGenerator'
 
 import { useUsersStore } from "../stores/userStore";
 const userStore = useUsersStore();
 
 onMounted(() => {
-    console.log(userStore.getUsers(),'ddd');
+    userStore.getUsers();
+    console.log(userStore.users, 'users');
 })
 
 
@@ -42,12 +44,23 @@ let loading = ref(false);
 let showPassword = ref(false);
 
 function onSubmit() {
-    // if (!this.form) return
-    console.log('lalalalla');
-    loading.value = true
+    if (!form.value) return;
+    loading.value = true;
+
+    let newUser = {
+        id: idGenerator(),
+        email: userEmail.value,
+        name: userName.value,
+        password: userPassword.value
+    }
+
+    // console.log(newUser, 'newUser');
+
+    userStore.createUser(newUser)
     // зробити запит на всіх юзерів і пошукати чи немає співпадінь по імені та імейлу
     setTimeout(() => (loading.value = false), 2000)
-
+    userStore.getUsers();
+    console.log(userStore.users, 'users');
 }
 
 </script>
