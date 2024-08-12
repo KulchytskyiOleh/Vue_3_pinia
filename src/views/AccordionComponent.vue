@@ -18,8 +18,8 @@
                     <div class="item-header" @click="toggleItem(index)">
                         <h2 :class="{ active: item.isOpen }">{{ item.title }}</h2>
                         <button :class="{ active: item.isOpen }">
-                            <img v-if="item.isOpen" src="../assets/icons/arrow-up.svg" alt="arrow-up">
-                            <img v-else src="../assets/icons/arrow-down.svg" alt="arrow-down">
+                            <img v-if="item.isOpen" src="../assets/icons/arrow-up.svg">
+                            <img v-else src="../assets/icons/arrow-down.svg">
                         </button>
                     </div>
                     <p v-if="item.isOpen">{{ item.content }}</p>
@@ -29,16 +29,16 @@
 
         <div class="show-more-container">
             <button class="show-more" @click="showMore">
-                {{ showAll ? 'Mostrar menos FAQs' : 'Mostrar más FAQs' }}
-                <img v-if="showAll" src="../assets/icons/button-arrow-up.svg" alt="">
-                <img v-else src="../assets/icons/button-arrow-down.svg" alt="">
+                {{ buttonTextToggle }}
+                <img v-if="showAll" src="../assets/icons/button-arrow-up.svg">
+                <img v-else src="../assets/icons/button-arrow-down.svg">
             </button>
         </div>
     </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 const faqItems = ref([
     { title: '¿Sabrá el redactor quién soy yo?', content: 'Todos tus datos personales son completamente confidenciales; el redactor nunca tendrá acceso a ellos.', isOpen: false },
@@ -74,6 +74,10 @@ const toggleItem = (index) => {
     faqItems.value[index].isOpen = !faqItems.value[index].isOpen;
 };
 
+const buttonTextToggle = computed(() => {
+    return showAll.value ? 'Mostrar menos FAQs' : 'Mostrar más FAQs'
+})
+
 const curtainHeight = ref(0);
 
 onMounted(() => {
@@ -102,12 +106,12 @@ const showMore = () => {
 }
 
 @media (width < 1439px) {
-    .top-section{
+    .top-section {
         flex-direction: column;
         margin-bottom: 20px;
         padding: 0 10px;
         background: url('../assets/icons/web-mobile.png') 100% 0 /auto 100% no-repeat,
-        linear-gradient(135deg, #F5FFF9 0%, #FEF8EB 47%, #F5FFF5 100%);
+            linear-gradient(135deg, #F5FFF9 0%, #FEF8EB 47%, #F5FFF5 100%);
     }
 }
 
@@ -132,7 +136,7 @@ const showMore = () => {
 
     }
 
-    @media (width <= 768px) {
+    @media (width <=768px) {
         margin-right: 0px;
         margin-top: 40px;
         padding: 0px 16px;
@@ -157,7 +161,7 @@ const showMore = () => {
         }
     }
 
-    @media (769px <= width < 1439px) {
+    @media (769px <=width < 1439px) {
         padding: 0px 104px;
         margin-right: 0px;
         margin-top: 56px;
