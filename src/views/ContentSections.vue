@@ -1,6 +1,5 @@
 <template>
     <div class="content">
-        <!-- <section v-for="(item, index) in items" :key="index" :id="'section-' + index" class="content-section"> -->
         <section v-for="(item, index) in items" :key="index" :id="item" class="content-section">
             <h2>{{ item }}</h2>
             <p>
@@ -32,19 +31,19 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+// import { defineProps } from 'vue'
+// const props = defineProps({ items: Array });
 
-const props = defineProps({
-    items: Array
-})
+const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+
 </script>
 
 <style scoped>
 .content {
     margin-top: 20px;
-}
 
-.content-section {
-    margin-bottom: 50px;
+    .content-section {
+        margin-bottom: 50px;
+    }
 }
 </style>

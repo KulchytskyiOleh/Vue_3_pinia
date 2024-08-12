@@ -18,6 +18,16 @@ const router = createRouter({
       component: () => import('../views/subHeader.vue')
     },
     {
+      path: '/swiper',
+      name: 'swiper',
+      component: () => import('../views/swiperComponent.vue')
+    },
+    {
+      path: '/accordion',
+      name: 'accordion',
+      component: () => import('../views/AccordionComponent.vue')
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import('../views/LoginPage.vue')

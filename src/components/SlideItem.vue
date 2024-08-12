@@ -1,5 +1,5 @@
 <template>
-    <li :class="{ 'slideItem': item, 'active': isActive }" @click="handleClick">
+    <li :class="['slideItem', { 'active': isActive }]" @click="handleClick">
         {{ item }}
     </li>
 </template>

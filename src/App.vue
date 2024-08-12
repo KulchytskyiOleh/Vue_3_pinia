@@ -6,11 +6,13 @@ import { /*RouterLink,*/ RouterView } from 'vue-router'
   <div class="wrapper">
     <nav>
       <RouterLink to="/login">Login</RouterLink>
-      <RouterLink to="/about">about</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/swiper">Swiper</RouterLink>
+      <RouterLink to="/accordion">accordion</RouterLink>
       <RouterLink to="/">Home</RouterLink>
     </nav>
   </div>
-  <RouterView />
+  <RouterView class="ContentWrapper"/>
 </template>
 
 <style scoped>
@@ -21,7 +23,11 @@ import { /*RouterLink,*/ RouterView } from 'vue-router'
   left: 50%;
   transform: translateX(-50%);
 }
-
+.ContentWrapper{
+  display: flex;
+  flex-direction: column;
+  
+}
 .logo {
   display: block;
   margin: 0 auto 2rem;

@@ -49,18 +49,12 @@ const scrollToItem = (itemElement, currentActive) => {
         const adjustedItemRight = itemRect.right - adjustedLeft;
 
         if (adjustedItemLeft < 0 || adjustedItemRight > visibleWidth) {
-            const newVisibleOffset = Math.max(
-                -adjustedItemLeft + (visibleWidth - itemWidth) / 2,
-                containerClientWidth - containerScrollWidth
-            )
+            const newVisibleOffset = Math.max(-adjustedItemLeft + (visibleWidth - itemWidth) / 2, containerClientWidth - containerScrollWidth);
             container.value.style.transform = `translateX(${newVisibleOffset}px)`
         }
-
-        // const section = document.getElementById(`section-${activeIndex.value}`)
-        const section = document.getElementById(`${currentActiveItem.value}`)
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' })
-        }
+        
+        const section = document.getElementById(`${currentActiveItem.value}`);
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
     }
 }
 </script>
