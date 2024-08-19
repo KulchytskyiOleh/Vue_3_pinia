@@ -23,6 +23,11 @@ const router = createRouter({
       component: () => import('../views/swiperComponent.vue')
     },
     {
+      path: '/swiper-new',
+      name: 'swiper-new',
+      component: () => import('../views/swiperComponentNew.vue')
+    },
+    {
       path: '/accordion',
       name: 'accordion',
       component: () => import('../views/AccordionComponent.vue')
