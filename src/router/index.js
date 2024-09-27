@@ -33,6 +33,11 @@ const router = createRouter({
       component: () => import('../views/AccordionComponent.vue')
     },
     {
+      path: '/dropzone',
+      name: 'dropzone',
+      component: () => import('../views/Dropzone.vue')
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import('../views/LoginPage.vue')

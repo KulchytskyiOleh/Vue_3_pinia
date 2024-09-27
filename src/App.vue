@@ -8,7 +8,9 @@ import { /*RouterLink,*/ RouterView } from 'vue-router'
       <RouterLink to="/login">Login</RouterLink>
       <RouterLink to="/about">About</RouterLink>
       <RouterLink to="/swiper">Swiper</RouterLink>
-      <RouterLink to="/accordion">accordion</RouterLink>
+      <RouterLink to="/swiper-new">Swiper-new</RouterLink>
+      <RouterLink to="/accordion">Accordion</RouterLink>
+      <RouterLink to="/dropzone">Dropzone</RouterLink>
       <RouterLink to="/">Home</RouterLink>
     </nav>
   </div>
@@ -26,7 +28,6 @@ import { /*RouterLink,*/ RouterView } from 'vue-router'
 .ContentWrapper{
   display: flex;
   flex-direction: column;
-  
 }
 .logo {
   display: block;
